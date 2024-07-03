@@ -1,23 +1,34 @@
-
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-int main() {
-    int M, N;
-    vector<int> v, w;
+bool canFold(vector<int>& inputTape, vector<int>& outputTape, int inputStart,
+             int inputEnd, int outputStart, int outputEnd) {
+    return true;
+}
 
-    while (cin >> N) {
-        v.reserve(N);
-        for (int i = 0; i < N; i++) {
-            cin >> v[i];
+int main() {
+    int inputTapeSize, outputTapeSize;
+    vector<int> inputTape, outputTape;
+
+    while (cin >> inputTapeSize) {
+        inputTape.resize(inputTapeSize);
+        for (int i = 0; i < inputTapeSize; i++) {
+            cin >> inputTape[i];
         }
 
-        cin >> M;
-        w.reserve(M);
-        for (int i = 0; i < M; i++) {
-            cin >> w[i];
+        cin >> outputTapeSize;
+        outputTape.resize(outputTapeSize);
+        for (int i = 0; i < outputTapeSize; i++) {
+            cin >> outputTape[i];
+        }
+
+        if (canFold(inputTape, outputTape, 0, inputTapeSize, 0,
+                    outputTapeSize)) {
+            cout << "S" << endl;
+        } else {
+            cout << "N" << endl;
         }
     }
 
