@@ -25,7 +25,7 @@ fi
 
 # Compile the .cpp file
 echo "Compiling $FOLDER/$NUMBER.cpp"
-g++ -o "$FOLDER/$NUMBER" "$FOLDER/$NUMBER.cpp"
+g++ -o "$FOLDER/$NUMBER.o" "$FOLDER/$NUMBER.cpp"
 
 # Check if the compilation was successful
 if [ $? -ne 0 ]; then
@@ -35,8 +35,8 @@ fi
 
 # Run the program with input and save the output
 echo "Running the program with input $FOLDER/$NUMBER.in"
-echo "Output will be written to $NUMBER.out"
-./"$FOLDER/$NUMBER" < "$FOLDER/$NUMBER.in" > "$FOLDER/$NUMBER.out"
+echo "Output will be written to $FOLDER/$NUMBER.out"
+./"$FOLDER/$NUMBER.o" < "$FOLDER/$NUMBER.in" > "$FOLDER/$NUMBER.out"
 
 # Check if the program ran successfully
 if [ $? -ne 0 ]; then
