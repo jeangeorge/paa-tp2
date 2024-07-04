@@ -8,8 +8,8 @@ const int MAX_POSSIBLE_TIME = 1000000000;
 
 bool canDivide(const vector<int>& popcornBags, long long maxTime,
                int competitors, int maxPopcornPerSecond) {
-    long long popcornsBeingEaten = 0,
-              maxPopcorns = maxTime * maxPopcornPerSecond;
+    long long popcornsBeingEaten = 0;
+    long long maxPopcorns = maxTime * maxPopcornPerSecond;
     int requiredCompetitors = 1;
 
     for (int popCornBag : popcornBags) {
@@ -31,6 +31,7 @@ bool canDivide(const vector<int>& popcornBags, long long maxTime,
     return true;
 }
 
+// xD
 int calculateMinTime(int competitors, int maxPopcornsPerSecond,
                      vector<int>& popcorns) {
     int left = 1, right = MAX_POSSIBLE_TIME, answer = right;
